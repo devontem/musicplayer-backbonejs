@@ -18,6 +18,11 @@ var SongQueue = Songs.extend({
     this.on('dequeue', function(song){
       this.shift();
     }, this);
+
+    this.on('delete', function(song){
+      console.log('songQueue remove method works!')
+      this.remove(song);
+    }, this);
   },
 
   playFirst: function(){
